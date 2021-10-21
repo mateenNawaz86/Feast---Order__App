@@ -3,8 +3,8 @@ import ReactDOM from "react-dom";
 
 import classes from "./Modal.module.css";
 
-const Backdrop = () => {
-  return <div className={classes.backdrop} />;
+const Backdrop = (props) => {
+  return <div className={classes.backdrop} onClick={props.onClose} />;
 };
 
 const ModalOverlay = (props) => {
@@ -20,7 +20,10 @@ const Modal = (props) => {
   return (
     <>
       {/* react-portal used for ensure the HTML code is not overlay on complete react-app */}
-      {ReactDOM.createPortal(<Backdrop />, overlayElement)}
+      {ReactDOM.createPortal(
+        <Backdrop onClose={props.onClose} />,
+        overlayElement
+      )}
       {ReactDOM.createPortal(
         <ModalOverlay>{props.children}</ModalOverlay>,
         overlayElement

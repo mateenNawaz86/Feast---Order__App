@@ -3,9 +3,9 @@ import { BiCart } from "react-icons/bi";
 
 import classes from "./CartBtn.module.css";
 
-const CartBtn = () => {
+const CartBtn = (props) => {
   return (
-    <button className={classes.button}>
+    <button className={classes.button} onClick={props.onShowCart}>
       <span>
         <BiCart className={classes.icon} />
       </span>

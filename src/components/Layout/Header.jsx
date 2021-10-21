@@ -5,7 +5,7 @@ import headerImg from "../../assets/meals.jpg";
 
 import classes from "./Header.module.css";
 
-const Header = () => {
+const Header = (props) => {
   return (
     <>
       <header className={classes.header}>
@@ -13,7 +13,7 @@ const Header = () => {
           <h2>Feast</h2>
           <MdOutlineFastfood className={classes.icon} />
         </div>
-        <CartBtn />
+        <CartBtn onShowCart={props.onShowCart} />
       </header>
 
       <div className={classes["main-image"]}>
