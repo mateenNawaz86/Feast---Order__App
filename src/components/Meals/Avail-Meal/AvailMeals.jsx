@@ -32,12 +32,11 @@ const AvailMeals = () => {
         <ul>
           {DUMMY_MEALS.map((item) => {
             return (
-              <li>
+              <li key={item.id}>
                 <MealItem
                   name={item.name}
                   description={item.description}
                   price={item.price}
-                  key={item.id}
                 />
               </li>
             );
