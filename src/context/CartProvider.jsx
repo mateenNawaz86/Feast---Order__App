@@ -11,7 +11,7 @@ const cartReducer = (state, action) => {
     case "ADD_TO_CART":
       const updateItem = state.items.concat(action.payload);
       const updateAmount =
-        state.totalAmount + state.payload.price * state.payload.amount;
+        state.totalAmount + action.payload.price * action.payload.amount;
 
       return {
         items: updateItem,
